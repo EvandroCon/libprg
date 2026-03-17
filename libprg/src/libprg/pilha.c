@@ -23,3 +23,4 @@ pilha_t* criar_pilha(int capacidade) {
 // deseemp_empilhar
 // tamanho
 // vazia
+// destruir_pilha
