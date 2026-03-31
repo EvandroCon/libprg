@@ -20,7 +20,7 @@ pilha_t* criar_pilha(int capacidade) {
     return pilha;
 }
 
-int empilhar(pilha_t* pilha, int* valor) {
+int empilhar(pilha_t* pilha, int valor) {
 
     if (pilha->topo + 1>= pilha->capacidade) {
         pilha->capacidade *= 2;
