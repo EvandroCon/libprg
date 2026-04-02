@@ -14,7 +14,13 @@ typedef struct fila
     int capacidade;
 }fila_t;
 
+bool cheia(fila_t* fila) {
+    return fila->tamanho >= fila->capacidade;
+}
 
+bool vazia_f(fila_t* fila) {
+    return fila->tamanho == 0;
+}
 
 fila_t* criar_fila(int capacidade)
 {
@@ -63,13 +69,6 @@ int inicio(fila_t* fila) {
     return fila->elementos[fila->inicio];
 }
 
-bool vazia_f(fila_t* fila) {
-    return fila->tamanho == 0;
-}
-
-bool cheia(fila_t* fila) {
-    return fila->tamanho >= fila->capacidade;
-}
 
 int destruir_fila(fila_t* fila)
 {
