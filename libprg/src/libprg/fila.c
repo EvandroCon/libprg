@@ -14,6 +14,10 @@ typedef struct fila
     int capacidade;
 }fila_t;
 
+int ler_tamanho(fila_t* fila) {
+    return fila->tamanho;
+}
+
 bool cheia(fila_t* fila) {
     return fila->tamanho >= fila->capacidade;
 }
