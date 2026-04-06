@@ -15,6 +15,7 @@ int destruir_pilha(pilha_t* pilha);
 
 //FILA
 typedef struct fila fila_t;
+int ler_tamanho(fila_t* fila);
 bool cheia(fila_t* fila);
 bool vazia_f(fila_t* fila);
 fila_t* criar_fila(int capacidade);
