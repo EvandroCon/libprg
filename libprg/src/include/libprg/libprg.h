@@ -20,7 +20,7 @@ bool cheia(fila_t* fila);
 bool vazia_f(fila_t* fila);
 fila_t* criar_fila(int capacidade);
 void enfileirar(fila_t* fila, int valor);
-void desenfileirar(fila_t* fila);
+int desenfileirar(fila_t* fila);
 int destruir_fila(fila_t* fila);
 int fim(fila_t* fila);
 int inicio(fila_t* fila);

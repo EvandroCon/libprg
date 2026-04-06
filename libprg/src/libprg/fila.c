@@ -53,12 +53,12 @@ void enfileirar(fila_t* fila, int valor)
 // vazia
 // cheia
 
-void desenfileirar(fila_t* fila) {
+int desenfileirar(fila_t* fila) {
     if (vazia_f(fila)) exit(EXIT_FAILURE);
     int valor = fila->elementos[fila->inicio];
     fila->inicio = (fila->inicio + 1) % fila->capacidade;
     fila->tamanho--;
-    //return valor;
+    return valor;
 }
 
 int fim(fila_t* fila) {
