@@ -54,7 +54,7 @@ void desenfileirar(fila_t* fila) {
     int valor = fila->elementos[fila->inicio];
     fila->inicio = (fila->inicio + 1) % fila->capacidade;
     fila->tamanho--;
-    return valor;
+    //return valor;
 }
 
 int fim(fila_t* fila) {
