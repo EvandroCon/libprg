@@ -24,4 +24,9 @@ int desenfileirar(fila_t* fila);
 int destruir_fila(fila_t* fila);
 int fim(fila_t* fila);
 int inicio(fila_t* fila);
+
+//LISTA
+typedef struct lista_linear lista_linear_t;
+lista_linear_t* criar_lista(bool ordenada);
 #endif
+
