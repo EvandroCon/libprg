@@ -1,5 +1,6 @@
 #ifndef LIBPRG_LIBPRG_H
 #define LIBPRG_LIBPRG_H
+#include <stdbool.h>
 
 
 //PILHA
@@ -37,3 +38,6 @@ no_t* criar_lista_encadeada(int dado){
     no_t* proximo;
 };
 void inserir_encadeada(no_t* inicio, int dado);
+bool remover_encadeada(no_t** inicio, int dado);
+no_t* buscar (no_t** inicio, int dado);
+void destruir_encadeada(no_t** inicio);
