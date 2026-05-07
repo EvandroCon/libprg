@@ -48,3 +48,6 @@ void inserir_encadeada_dupla(nod_t** inicio, int dado);
 nod_t *buscar_encadeada_dupla(nod_t **inicio, int dado);
 void destruir_encadeada_dupla(nod_t** inicio);
 bool remover_encadeada_dupla(nod_t** inicio, int dado);
+
+//ALGORITMOS DE ORDENAÇÃO
+int* bubble_sort(int* vetor, int tamanho);
