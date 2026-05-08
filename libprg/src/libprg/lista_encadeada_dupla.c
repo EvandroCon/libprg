@@ -46,27 +46,27 @@ void destruir_encadeada_dupla(nod_t** inicio) {
     }
 }
 
-bool remover_encadeada_dupla(nod_t** inicio, int dado) {
-
-    nod_t* atual = *inicio;
-
-    while (atual != NULL) {
-        if (atual->dado == dado) {
-            if (atual->anterior == NULL) *inicio = atual->proximo;
-            else {
-                atual->anterior->proximo = atual->proximo;
-                atual->proximo->anterior = atual->anterior;
-            }
-
-            free(atual);
-            return true;
-
-        }
-
-        atual = atual->proximo;
-    }
-    return false;
-
-}
+// bool remover_encadeada_dupla(nod_t** inicio, int dado) {
+//
+//     nod_t* atual = *inicio;
+//
+//     while (atual != NULL) {
+//         if (atual->dado == dado) {
+//             if (atual->anterior == NULL) *inicio = atual->proximo;
+//             else {
+//                 atual->anterior->proximo = atual->proximo;
+//                 atual->proximo->anterior = atual->anterior;
+//             }
+//
+//             free(atual);
+//             return true;
+//
+//         }
+//
+//         atual = atual->proximo;
+//     }
+//     return false;
+//
+// }
 
 

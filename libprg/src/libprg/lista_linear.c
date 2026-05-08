@@ -25,11 +25,11 @@ lista_linear_t *criar_lista(bool ordenada) {
 }
 
 
-//inserir//
-remover(lista_linear_t* lista, int alvo) {
-    int indice = buscar(lista, alvo);
+// //inserir//
+// remover(lista_linear_t* lista, int alvo) {
+//     int indice = buscar(lista, alvo);
 
-}
+
 //buscar{
 // if (lista->ordenada) {
 //     indice = buscar_binario;
