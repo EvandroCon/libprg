@@ -40,6 +40,8 @@ void inserir_encadeada(lista_encadeada_t* lista, int dado);
 bool remover_encadeada(lista_encadeada_t* lista, int dado);
 no_t* buscar (lista_encadeada_t* lista, int dado);
 void destruir_encadeada(lista_encadeada_t* lista);
+int inicio_lista_encadeada(lista_encadeada_t* lista);
+int tamanho_lista_encadeada(lista_encadeada_t* lista);
 
 //Lista encadeada dupla
 typedef struct nod nod_t;
