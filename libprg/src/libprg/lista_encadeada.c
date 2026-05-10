@@ -96,3 +96,37 @@ void destruir_encadeada(lista_encadeada_t* lista) {
 
     free(lista);
 }
+
+int inicio_lista_encadeada(lista_encadeada_t* lista) {
+    if (lista == NULL) {
+        printf("Lista inexistente\n");
+        return -1;
+    }
+
+    if (lista->inicio == NULL) {
+        printf("Lista vazia\n");
+        return -1;
+    }
+
+    return lista->inicio->dado;
+
+}
+
+int tamanho_lista_encadeada(lista_encadeada_t* lista) {
+
+    if (lista == NULL)
+        return 0;
+
+    int tamanho = 0;
+
+    no_t* atual = lista->inicio;
+
+    while (atual != NULL) {
+
+        tamanho++;
+
+        atual = atual->proximo;
+    }
+
+    return tamanho;
+}
