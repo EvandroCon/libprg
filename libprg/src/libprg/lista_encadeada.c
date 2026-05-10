@@ -130,3 +130,22 @@ int tamanho_lista_encadeada(lista_encadeada_t* lista) {
 
     return tamanho;
 }
+
+void imprimir_lista_encadeada(lista_encadeada_t* lista) {
+
+    if (lista == NULL) {
+        printf("Lista inexistente\n");
+        return;
+    }
+
+    no_t* atual = lista->inicio;
+
+    while (atual != NULL) {
+
+        printf("%d ", atual->dado);
+
+        atual = atual->proximo;
+    }
+
+    printf("\n");
+}
