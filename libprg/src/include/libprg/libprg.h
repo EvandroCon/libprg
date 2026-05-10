@@ -33,13 +33,13 @@ lista_linear_t* criar_lista(bool ordenada);
 
 
 //LISTA ENCADEADA
-// typedef struct no no_t;
-// typedef struct lista_encadeada_t;
-// lista_encadeada_t* criar_lista_encadeada(bool ordenada);
-// void inserir_encadeada(no_t* lista, int dado);
-// bool remover_encadeada(no_t** lista, int dado);
-// no_t* buscar (no_t** lista, int dado);
-// void destruir_encadeada(no_t** inicio);
+typedef struct no no_t;
+typedef struct lista_encadeada lista_encadeada_t;
+lista_encadeada_t* criar_lista_encadeada(bool ordenada);
+void inserir_encadeada(lista_encadeada_t* lista, int dado);
+bool remover_encadeada(lista_encadeada_t* lista, int dado);
+no_t* buscar (lista_encadeada_t* lista, int dado);
+void destruir_encadeada(lista_encadeada_t* lista);
 
 //Lista encadeada dupla
 typedef struct nod nod_t;
