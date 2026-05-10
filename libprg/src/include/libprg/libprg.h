@@ -54,5 +54,5 @@ bool remover_encadeada_dupla(nod_t** inicio, int dado);
 
 //ALGORITMOS DE ORDENAÇÃO
 int* bubble_sort(int* vetor, int tamanho);
-int* insertion_sort(int* vetor, int tamanho);
-int* selection_sort(int* vetor, int tamanho);
+void insertion_sort(int* vetor, int tamanho);
+void selection_sort(int* vetor, int tamanho);

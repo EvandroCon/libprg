@@ -16,7 +16,7 @@ int* bubble_sort(int* vetor, int tamanho) {
     return vetor;
 }
 
-int* insertion_sort(int* vetor, int tamanho)
+void insertion_sort(int* vetor, int tamanho)
 {
     for (int i = 1; i < tamanho - 1; i++)
     {
@@ -31,7 +31,7 @@ int* insertion_sort(int* vetor, int tamanho)
     }
 }
 
-int* selection_sort(int* vetor, int tamanho)
+void selection_sort(int* vetor, int tamanho)
 {
     for (int i = 0; i < tamanho - 1; i++)
     {
