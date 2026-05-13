@@ -99,7 +99,7 @@ void trocar_posicao(int *a, int *b)
     *b = temp;
 }
 
-int particiona(int* vetor, int inicio, int fim)
+void particiona(int* vetor, int inicio, int fim)
 {
     int pivo = vetor[fim];
     int i = inicio - 1;
@@ -113,10 +113,10 @@ int particiona(int* vetor, int inicio, int fim)
     }
     i = i + 1;
     trocar_posicao(&vetor[i], &vetor[fim]);
-    return i;
+
 }
 
-int* quick_sort (int* vetor, int inicio, int fim)
+void quick_sort (int* vetor, int inicio, int fim)
 {
     if (inicio < fim)
     {
@@ -124,5 +124,5 @@ int* quick_sort (int* vetor, int inicio, int fim)
         quick_sort(vetor, inicio, pivo - 1);
         quick_sort(vetor, pivo + 1, fim);
     }
-    return vetor;
+
 }
