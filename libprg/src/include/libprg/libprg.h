@@ -56,5 +56,5 @@ bool remover_encadeada_dupla(nod_t** inicio, int dado);
 int* bubble_sort(int* vetor, int tamanho);
 void insertion_sort(int* vetor, int tamanho);
 void selection_sort(int* vetor, int tamanho);
-void merge_sort(int* vetor, int esquerda, int direita);
-void quick_sort (int* vetor, int inicio, int fim);
+int* merge_sort(int* vetor, int esquerda, int direita);
+int* quick_sort (int* vetor, int inicio, int fim);

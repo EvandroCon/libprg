@@ -81,14 +81,14 @@ int* merge(int* vetor, int esquerda, int meio, int direita) {
     return vetor;
 }
 
-void merge_sort(int* vetor, int esquerda, int direita) {
+int* merge_sort(int* vetor, int esquerda, int direita) {
     if (esquerda < direita) {
         int meio = esquerda + (direita - esquerda) / 2;
         merge_sort(vetor, esquerda, meio);
         merge_sort(vetor, meio + 1, direita);
         merge(vetor, esquerda, meio, direita);
     }
-
+    return vetor;
 }
 
 
@@ -116,7 +116,7 @@ int particiona(int* vetor, int inicio, int fim)
     return i;
 }
 
-void quick_sort (int* vetor, int inicio, int fim)
+int* quick_sort (int* vetor, int inicio, int fim)
 {
     if (inicio < fim)
     {
@@ -124,5 +124,5 @@ void quick_sort (int* vetor, int inicio, int fim)
         quick_sort(vetor, inicio, pivo - 1);
         quick_sort(vetor, pivo + 1, fim);
     }
-
+    return vetor;
 }
