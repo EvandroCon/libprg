@@ -70,3 +70,4 @@ void destruir_encadeada_dupla(nod_t** inicio) {
 // }
 
 
+
