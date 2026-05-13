@@ -81,14 +81,14 @@ int* merge(int* vetor, int esquerda, int meio, int direita) {
     return vetor;
 }
 
-int* merge_sort(int* vetor, int esquerda, int direita) {
+void merge_sort(int* vetor, int esquerda, int direita) {
     if (esquerda < direita) {
         int meio = esquerda + (direita - esquerda) / 2;
         merge_sort(vetor, esquerda, meio);
         merge_sort(vetor, meio + 1, direita);
         merge(vetor, esquerda, meio, direita);
     }
-    return vetor;
+
 }
 
 
@@ -99,7 +99,7 @@ void trocar_posicao(int *a, int *b)
     *b = temp;
 }
 
-void particiona(int* vetor, int inicio, int fim)
+int particiona(int* vetor, int inicio, int fim)
 {
     int pivo = vetor[fim];
     int i = inicio - 1;
@@ -113,7 +113,7 @@ void particiona(int* vetor, int inicio, int fim)
     }
     i = i + 1;
     trocar_posicao(&vetor[i], &vetor[fim]);
-
+    return i;
 }
 
 void quick_sort (int* vetor, int inicio, int fim)
