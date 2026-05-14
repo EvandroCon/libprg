@@ -58,3 +58,7 @@ void insertion_sort(int* vetor, int tamanho);
 void selection_sort(int* vetor, int tamanho);
 int* merge_sort(int* vetor, int esquerda, int direita);
 int* quick_sort (int* vetor, int inicio, int fim);
+
+//TABELA DE DISPERSAO
+typedef struct noh noh_t;
+dicionario_t* criar_dicionario(int m);
