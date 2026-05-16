@@ -37,6 +37,9 @@ int tamanho_lista(lista_linear_t *lista);
 bool lista_cheia(lista_linear_t *lista);
 bool lista_vazia(lista_linear_t *lista);
 void destruir_lista(lista_linear_t *lista);
+void imprimir_lista(lista_linear_t *lista);
+int primeiro_elemento(lista_linear_t *lista);
+
 
 
 //LISTA ENCADEADA
