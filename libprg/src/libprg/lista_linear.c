@@ -3,6 +3,7 @@
 //
 
 #include <stdbool.h>
+#include <stdio.h>
 #include <stdlib.h>
 
 #define CAPACIDADE_INICIAL 10
@@ -116,21 +117,21 @@ void destruir_lista(lista_linear_t *lista)
     free(lista);
 }
 
-// //inserir//
-// remover(lista_linear_t* lista, int alvo) {
-//     int indice = buscar(lista, alvo);
+void imprimir_lista(lista_linear_t *lista)
+{
+    for (int i = 0; i < lista->tamanho; i++)
+    {
+        printf("%d ", lista->elementos[i]);
+    }
+    printf("\n");
+}
 
 
-//buscar{
-// if (lista->ordenada) {
-//     indice = buscar_binario;
-// } else {
-//     indice = buscar_linear;
-// }
-//}
-//buscar_linear
-//buscar_binario
-//alterar
-//ordenar
-//combinar
-//destruir
+int primeiro_elemento(lista_linear_t *lista)
+{
+    if (lista->tamanho == 0)
+    {
+        return -1;
+    }
+    return lista->elementos[0];
+}
