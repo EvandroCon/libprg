@@ -61,4 +61,5 @@ int* quick_sort (int* vetor, int inicio, int fim);
 
 //TABELA DE DISPERSAO
 typedef struct noh noh_t;
+typedef struct dicionario dicionario_t;
 dicionario_t* criar_dicionario(int m);
