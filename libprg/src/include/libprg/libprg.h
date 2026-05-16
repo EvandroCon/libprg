@@ -26,10 +26,17 @@ int destruir_fila(fila_t* fila);
 int fim(fila_t* fila);
 int inicio(fila_t* fila);
 
-//LISTA
+//LISTA LINEAR
 typedef struct lista_linear lista_linear_t;
 lista_linear_t* criar_lista(bool ordenada);
-#endif
+bool inserir(lista_linear_t* lista, int valor);
+bool remover(lista_linear_t* lista, int valor);
+int buscar_linear(lista_linear_t* lista, int valor);
+int busca_binaria(lista_linear_t *lista, int valor);
+int tamanho_lista(lista_linear_t *lista);
+bool lista_cheia(lista_linear_t *lista);
+bool lista_vazia(lista_linear_t *lista);
+void destruir_lista(lista_linear_t *lista);
 
 
 //LISTA ENCADEADA
@@ -44,7 +51,7 @@ int inicio_lista_encadeada(lista_encadeada_t* lista);
 int tamanho_lista_encadeada(lista_encadeada_t* lista);
 void imprimir_lista_encadeada(lista_encadeada_t* lista);
 
-//Lista encadeada dupla
+//LISTA ENCADEADA DUPLA
 typedef struct nod nod_t;
 nod_t* criar_lista_encadeada_dupla(int dado);
 void inserir_encadeada_dupla(nod_t** inicio, int dado);
@@ -63,3 +70,5 @@ int* quick_sort (int* vetor, int inicio, int fim);
 typedef struct noh noh_t;
 typedef struct dicionario dicionario_t;
 dicionario_t* criar_dicionario(int m);
+
+#endif
