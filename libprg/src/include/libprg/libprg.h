@@ -74,4 +74,9 @@ typedef struct noh noh_t;
 typedef struct dicionario dicionario_t;
 dicionario_t* criar_dicionario(int m);
 
+
+//ARVORE
+typedef struct no_a no_at;
+no_at* criarNo_at(int valor);
+no_at* adicionar_no_at(int valor, no_at* raiz);
 #endif
