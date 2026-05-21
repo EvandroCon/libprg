@@ -2,12 +2,9 @@
 // Created by aluno on 19/05/2026.
 //
 
-// no
-//
-// criar_no
-// adicionar
-// remover
-// destruir
+
+#include <stdio.h>
+
 #include "libprg/libprg.h"
 #include <stdlib.h>
 
@@ -40,3 +37,33 @@ no_at* adicionar_no_at(int valor, no_at* raiz) {
     }
     return raiz;
 }
+
+void travessia_em_ordem(no_at* raiz) {
+    if  (raiz != NULL) {
+        travessia_em_ordem(raiz->esquerda);
+        printf("%d ", raiz->valor);
+        travessia_em_ordem(raiz->direita);
+    }
+}
+
+void travessia_pre_ordem(no_at* raiz) {
+    if  (raiz != NULL) {
+        printf("%d ", raiz->valor);
+        travessia_em_ordem(raiz->esquerda);
+        travessia_em_ordem(raiz->direita);
+    }
+}
+
+void travessia_pos_ordem(no_at* raiz) {
+    if  (raiz != NULL) {
+        travessia_em_ordem(raiz->esquerda);
+        travessia_em_ordem(raiz->direita);
+        printf("%d ", raiz->valor);
+    }
+}
+
+// remover
+// destruir
+// travessia pre ordem
+// travessia em ordem
+// travessia pos ordem

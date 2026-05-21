@@ -79,4 +79,6 @@ dicionario_t* criar_dicionario(int m);
 typedef struct no_a no_at;
 no_at* criarNo_at(int valor);
 no_at* adicionar_no_at(int valor, no_at* raiz);
+void travessia_em_ordem(no_at* raiz);
+void travessia_pre_ordem(no_at* raiz);
 #endif
