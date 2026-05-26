@@ -86,3 +86,9 @@ void travessia_em_ordem(no_at* raiz);
 void travessia_pre_ordem(no_at* raiz);
 void travessia_pos_ordem(no_at* raiz);
 #endif
+
+//ARVORE AVL
+typedef struct noavl noavl_t;
+noavl_t* criarNoalv_t(int valor);
+int altura_avl(noavl_t* raiz);
+noavl_t* adicionar_noavl(int dado, noavl_t raiz);
