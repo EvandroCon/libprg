@@ -92,3 +92,4 @@ typedef struct noavl noavl_t;
 noavl_t* criarNoalv_t(int valor);
 int altura_avl(noavl_t* raiz);
 noavl_t* adicionar_noavl(int dado, noavl_t raiz);
+noavl_t* remover_noavl(noavl_t* raiz, int dado);

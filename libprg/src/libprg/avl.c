@@ -90,3 +90,46 @@ noavl_t* balancear(noavl_t* v) {
 }
 //rotacao dupla esquerda
 //balancear
+
+noavl_t* remover_noavl(noavl_t* raiz, int dado) {
+    if (raiz == NULL) {
+        return NULL;
+    }
+
+    // Procurar o valor
+    if (dado < raiz->dado) {
+        raiz->esquerda = remover_noavl(raiz->esquerda, dado);
+    }
+
+    else if (dado > raiz->dado) {
+        raiz->direita = remover_noavl(raiz->direita, dado);
+    }
+
+    // Encontrou o nó
+    else {
+        // Caso 1: nó folha
+        if ((raiz->esquerda == NULL || raiz->direita == NULL)) {// 1 ou 0 filhos
+            noavl_t* temp = raiz->esquerda ? raiz->esquerda : raiz->direita;
+            if (temp == NULL) { // 0 filhos
+                free(raiz);
+                return NULL;
+            }
+            free(raiz); // 1 filho
+            return temp;
+        }
+        else { // 2 filhos
+            // encontra o menor valor da subarvore da direita
+            noavl_t* temp = raiz->direita;
+            while (temp && temp->esquerda != NULL) {
+                temp = temp->esquerda;
+            }
+            raiz->dado = temp->dado;
+            raiz->direita = remover_noavl(raiz->direita, temp->dado);
+            }
+    }
+    if (raiz != NULL) {
+        raiz->altura = 1 + max(altura_avl(raiz->esquerda), altura_avl(raiz->direita));
+        raiz = balancear(raiz);
+    }
+    return raiz;
+}
