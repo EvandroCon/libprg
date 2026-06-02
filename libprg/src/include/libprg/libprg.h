@@ -89,7 +89,13 @@ void travessia_pos_ordem(no_at* raiz);
 
 //ARVORE AVL
 typedef struct noavl noavl_t;
-noavl_t* criarNoalv_t(int valor);
+noavl_t* criarNoavl_t(int valor);
 int altura_avl(noavl_t* raiz);
-noavl_t* adicionar_noavl(int dado, noavl_t raiz);
+noavl_t* balancear(noavl_t* v);
+int fator_balaceamento(noavl_t* raiz);
+noavl_t* rotacao_esquerda(noavl_t* v);
+noavl_t* rotacao_direita(noavl_t* v);
+noavl_t* rotacao_dupla_direita(noavl_t* v);
+noavl_t* rotacao_dupla_esquerda(noavl_t* v);
+noavl_t* adicionar_noavl(int dado, noavl_t* raiz);
 noavl_t* remover_noavl(noavl_t* raiz, int dado);

@@ -6,7 +6,7 @@
 
 #include "libprg/libprg.h"
 
-#define max(a, b) (a > b) ? a : b)
+#define max(a, b) ((a) > (b) ? (a) : (b))
 
 typedef struct noavl {
     int dado;
@@ -16,7 +16,7 @@ typedef struct noavl {
 }noavl_t;
 
 
-noavl_t* criarNoalv_t(int valor){
+noavl_t* criarNoavl_t(int valor){
     noavl_t* no = malloc(sizeof(noavl_t));
     no->dado = valor;
     no->esquerda = NULL;
@@ -41,7 +41,7 @@ int fator_balaceamento(noavl_t* raiz) {
 noavl_t* adicionar_noavl(int dado, noavl_t* raiz) {
 
     if (raiz == NULL) {
-        return criarNoalv_t(dado);
+        return criarNoavl_t(dado);
     }
 
     if (raiz->dado < dado) {
@@ -50,15 +50,25 @@ noavl_t* adicionar_noavl(int dado, noavl_t* raiz) {
     if (raiz->dado > dado) {
         raiz->esquerda = adicionar_noavl(dado, raiz->esquerda);
     }
-    return raiz;
+    raiz->altura = 1 + max(
+        altura_avl(raiz->esquerda),
+        altura_avl(raiz->direita)
+    );
+
+    return balancear(raiz);
 }
 
 noavl_t* rotacao_dupla_direita(noavl_t* v) {
     v->direita = rotacao_direita(v->direita);
     return rotacao_esquerda(v);
 }
-//rotacao direita
-//rotacao dupla direita
+
+noavl_t* rotacao_dupla_esquerda(noavl_t* v) {
+    v->esquerda = rotacao_esquerda(v->esquerda);
+    return rotacao_direita(v);
+}
+
+
 noavl_t* rotacao_esquerda(noavl_t* v) {
     noavl_t* u = v->direita;
     noavl_t* t2 = u->esquerda;
@@ -76,20 +86,48 @@ noavl_t* rotacao_direita(noavl_t* v) {
     noavl_t* u = v->esquerda;
     noavl_t* t2 = u->direita;
 
-    u->esquerda = v;
-    v->direita = t2;
+    u->direita = v;
+    v->esquerda = t2;
 
-    v->altura = max(altura_avl(v->esquerda), altura_avl(v->direita)) + 1;
-    u->altura = max(altura_avl(u->esquerda), altura_avl(u->direita)) + 1;
+    v->altura = 1 + max(
+        altura_avl(v->esquerda),
+        altura_avl(v->direita)
+    );
+
+    u->altura = 1 + max(
+        altura_avl(u->esquerda),
+        altura_avl(u->direita)
+    );
 
     return u;
 }
 
-noavl_t* balancear(noavl_t* v) {
-    int fb = fator_balanceado(v);
+int fator_balanceamento(noavl_t* raiz) {
+    if (raiz == NULL) {
+        return 0;
+    }
+    return altura_avl(raiz->esquerda) - altura_avl(raiz->direita);
 }
-//rotacao dupla esquerda
-//balancear
+
+noavl_t* balancear(noavl_t* v) {
+    int fb = fator_balanceamento(v);
+
+    if (fb > 1) {
+        if (fator_balanceamento(v->esquerda) > 0) {
+            return rotacao_esquerda(v);
+        } else {
+            return rotacao_direita(v);
+        }
+    } else if (fb < -1) {
+        if (fator_balanceamento(v->direita) < 0) {
+            return rotacao_esquerda(v);
+        } else {
+            return rotacao_direita(v);
+        }
+    }
+    return v;
+}
+
 
 noavl_t* remover_noavl(noavl_t* raiz, int dado) {
     if (raiz == NULL) {
