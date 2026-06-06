@@ -73,6 +73,11 @@ int* quick_sort (int* vetor, int inicio, int fim);
 typedef struct noh noh_t;
 typedef struct dicionario dicionario_t;
 dicionario_t* criar_dicionario(int m);
+int buscar_hash(dicionario_t* d, char* chave, int* valor);
+int remover_hash(dicionario_t* d, char* chave);
+int inserir_hash(dicionario_t* d, char* chave, int valor);
+void destruir_dicionario(dicionario_t* d);
+
 
 
 //ARVORE
