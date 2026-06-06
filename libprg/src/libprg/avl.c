@@ -161,3 +161,29 @@ noavl_t* remover_noavl(noavl_t* raiz, int dado) {
     return raiz;
 }
 
+// Pré-ordem: raiz → esquerda → direita
+void preordem(noavl_t* raiz) {
+    if (raiz == NULL) return;
+
+    printf("%d ", raiz->dado);
+    preordem(raiz->esquerda);
+    preordem(raiz->direita);
+}
+
+// Em-ordem: esquerda → raiz → direita (resulta em ordem crescente)
+void emordem(noavl_t* raiz) {
+    if (raiz == NULL) return;
+
+    emordem(raiz->esquerda);
+    printf("%d ", raiz->dado);
+    emordem(raiz->direita);
+}
+
+// Pós-ordem: esquerda → direita → raiz
+void posordem(noavl_t* raiz) {
+    if (raiz == NULL) return;
+
+    posordem(raiz->esquerda);
+    posordem(raiz->direita);
+    printf("%d ", raiz->dado);
+}

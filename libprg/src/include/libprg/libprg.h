@@ -108,3 +108,6 @@ noavl_t* rotacao_dupla_direita(noavl_t* v);
 noavl_t* rotacao_dupla_esquerda(noavl_t* v);
 noavl_t* adicionar_noavl(int dado, noavl_t* raiz);
 noavl_t* remover_noavl(noavl_t* raiz, int dado);
+void preordem(noavl_t* raiz);
+void emordem(noavl_t* raiz);
+void posordem(noavl_t* raiz);
