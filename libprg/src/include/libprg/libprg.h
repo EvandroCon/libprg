@@ -86,6 +86,7 @@ void travessia_em_ordem(no_at* raiz);
 void travessia_pre_ordem(no_at* raiz);
 void travessia_pos_ordem(no_at* raiz);
 int maior_valor(no_at *raiz);
+int menor_valor(no_at *raiz);
 #endif
 
 //ARVORE AVL

@@ -170,3 +170,16 @@ int maior_valor(no_at *raiz) {
     return raiz->valor;
 }
 
+int menor_valor(no_at *raiz) {
+
+    if (raiz == NULL) {
+        printf("Arvore vazia!\n");
+        return -1;
+    }
+
+    while (raiz->esquerda != NULL) {
+        raiz = raiz->esquerda;
+    }
+
+    return raiz->valor;
+}
