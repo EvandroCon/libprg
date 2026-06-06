@@ -156,3 +156,17 @@ void travessia_pos_ordem(no_at* raiz) {
     }
 }
 
+int maior_valor(no_at *raiz) {
+
+    if (raiz == NULL) {
+        printf("Arvore vazia!\n");
+        return -1;
+    }
+
+    while (raiz->direita != NULL) {
+        raiz = raiz->direita;
+    }
+
+    return raiz->valor;
+}
+
