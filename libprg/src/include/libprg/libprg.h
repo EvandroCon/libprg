@@ -76,6 +76,7 @@ dicionario_t* criar_dicionario(int m);
 int buscar_hash(dicionario_t* d, char* chave, int* valor);
 int remover_hash(dicionario_t* d, char* chave);
 int inserir_hash(dicionario_t* d, char* chave, int valor);
+void imprimir_hash(dicionario_t* d);
 void destruir_dicionario(dicionario_t* d);
 
 

@@ -1,6 +1,7 @@
 //
 // Created by aluno on 14/05/2026.
 //
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -138,4 +139,21 @@ void destruir_dicionario(dicionario_t* d) {
 
     free(d->vetor);
     free(d);
+}
+
+void imprimir_hash(dicionario_t* d) {
+
+    for (int i = 0; i < d->tamanho; i++) {
+
+        noh_t* aux = d->vetor[i];
+
+        while (aux != NULL) {
+
+            printf("Chave: %s | Valor: %d\n",
+                   aux->chave,
+                   aux->valor);
+
+            aux = aux->proximo;
+        }
+    }
 }
