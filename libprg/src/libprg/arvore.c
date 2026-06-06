@@ -183,3 +183,19 @@ int menor_valor(no_at *raiz) {
 
     return raiz->valor;
 }
+
+int altura(no_at *raiz) {
+
+    if (raiz == NULL) {
+        return 0;
+    }
+
+    int alt_esq = altura(raiz->esquerda);
+    int alt_dir = altura(raiz->direita);
+
+    if (alt_esq > alt_dir) {
+        return alt_esq + 1;
+    } else {
+        return alt_dir + 1;
+    }
+}
