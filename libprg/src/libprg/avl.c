@@ -187,3 +187,14 @@ void posordem(noavl_t* raiz) {
     posordem(raiz->direita);
     printf("%d ", raiz->dado);
 }
+
+void destruir_avl(noavl_t* raiz) {
+    if (raiz == NULL) {
+        return;
+    }
+
+    destruir_avl(raiz->esquerda);
+    destruir_avl(raiz->direita);
+
+    free(raiz);
+}
